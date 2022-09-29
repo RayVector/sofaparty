@@ -1,7 +1,7 @@
 import {WatchForm} from "../components/forms/WatchForm";
-import {Paper} from "@mui/material";
 import {useState} from "react";
 import {CinemaBar} from "../components/CinemaBar";
+import {PaperBlock} from "../components/PaperBlock";
 
 export const Watch = () => {
   const [watchSource, setWatchSource] = useState<string>('');
@@ -11,18 +11,18 @@ export const Watch = () => {
   }
 
   return (
-    <div>
-      <Paper elevation={3} className={'my-5 py-5 px-5'}>
+    <>
+      <PaperBlock>
         <WatchForm onSubmitForm={submitFormHandler}/>
-      </Paper>
+      </PaperBlock>
       {watchSource &&
-        <Paper elevation={3} className={'py-5 px-5'}>
+        <PaperBlock>
           <CinemaBar
             src={watchSource}
             isFullWidth={true}
           />
-        </Paper>
+        </PaperBlock>
       }
-    </div>
+    </>
   )
 }
