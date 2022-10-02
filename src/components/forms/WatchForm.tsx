@@ -1,42 +1,35 @@
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import {useState} from "react";
 import {Button} from "@mui/material";
+import {BoxBlock} from "../BoxBlock";
 
 interface IFormProps {
   onSubmitForm: (formData: string) => void
 }
 
-export const WatchForm = ({ onSubmitForm }: IFormProps) => {
+export const WatchForm = ({onSubmitForm}: IFormProps) => {
   const [watchCode, setWatchCode] = useState('')
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = (e: any) => {
+    e.preventDefault()
     onSubmitForm(watchCode)
   }
 
-  return(
-    <>
-      <Box
-        component="form"
-        sx={{'& .MuiTextField-root': { m: 1, width: '25ch' },}}
-        noValidate
-        autoComplete="off"
-        className={'flex items-center'}
+  return (
+    <BoxBlock componentType={'form'}>
+      <TextField
+        required
+        label="Video URL"
+        value={watchCode}
+        onChange={e => setWatchCode(e.target.value)}
+      />
+      <Button
+        type="submit"
+        variant="contained"
+        onClick={onSubmitHandler}
       >
-        <TextField
-          id="outlined-multiline-static"
-          label="Video URL"
-          value={watchCode}
-          onChange={e => setWatchCode(e.target.value)}
-        />
-        <Button
-          disabled={!watchCode}
-          variant="contained"
-          onClick={onSubmitHandler}
-        >
-          Watch
-        </Button>
-      </Box>
-    </>
+        Watch
+      </Button>
+    </BoxBlock>
   )
 }
