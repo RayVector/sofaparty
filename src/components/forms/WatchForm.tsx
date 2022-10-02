@@ -37,10 +37,6 @@ export const WatchForm = ({ onSubmitForm }: IFormProps) => {
           Watch
         </Button>
       </Box>
-      <code>
-        {/*for dev*/}
-        //kodik.info/seria/150254/beb20ce067ce6b44996c2465fc1b1cfa/720p
-      </code>
     </>
   )
 }

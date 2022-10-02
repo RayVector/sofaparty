@@ -70,7 +70,11 @@ export const TheFriendsDrawer = ({isDrawerShown, setDrawerShown}: IFriendsDrawer
         >
           <div>
             {friendsList.map(friend =>
-              <Accordion expanded={expanded === friend.id} onChange={handleChange(friend.id)}>
+              <Accordion
+                expanded={expanded === friend.id}
+                onChange={handleChange(friend.id)}
+                key={friend.id}
+              >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon/>}
                   aria-controls="panel1bh-content"
