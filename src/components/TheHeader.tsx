@@ -152,7 +152,6 @@ export const TheHeader = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{display: {xs: 'flex', md: 'none'}, mr: 1}}/>
           <Typography
             variant="h5"
             noWrap
@@ -169,7 +168,7 @@ export const TheHeader = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            SofaParty
           </Typography>
           <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
             {pages.map((page) => (
