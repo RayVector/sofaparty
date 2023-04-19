@@ -13,6 +13,10 @@ const libraryItemsStorage = [
   {
     name: 'Глухомань',
     source: '//kodik.info/seria/150254/beb20ce067ce6b44996c2465fc1b1cfa/720p'
+  },
+  {
+    name: 'Социальная сеть',
+    source: 'https://voidboost.net/embed/427198?partner=gidonline&tp=21&vstop=7&df=1&vsright=111'
   }
 ]
 
